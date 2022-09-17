@@ -2,9 +2,8 @@
 #define HANN
 
 #include <vector>
-using std::vector;
 
-vector<vector<float>> hann(int dayCount, vector<float> samples);
+std::vector<std::vector<float>> hann(int dayCount, std::vector<float> samples);
 
 
 #endif
