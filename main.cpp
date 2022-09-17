@@ -8,9 +8,7 @@ int main() {
     const string inputFilePath = "./test-audio.wav";
     AudioFile<float> a;
     bool loadedOK = a.load (inputFilePath);
-    for (int i = 0; i < a.getNumSamplesPerChannel(); i++){
-        cout << a.samples[0][i] << endl;
-    }
+
     long interval = floor(a.getNumSamplesPerChannel()/260);
     vector<vector<float>> split;
     for (int i = 0; i < 260; i++){
@@ -21,7 +19,7 @@ int main() {
                 curVec.push_back(multiplier * a.samples[0][i*interval + x]);
             }
             split.push_back(curVec);
-        } else{
+        } else{ 
             long newInterval = a.samples[0].size() - i*interval;
             for (int x = 0; x < newInterval; x++) {
                 double multiplier = 0.5 * (1 - cos(2*M_PI*x/newInterval));
