@@ -1,6 +1,5 @@
 #include<vector>
 #include <cmath>
-using std::vector;
 
 vector<vector<float>> hann(int dayCount, vector<float> samples) {
     vector<vector<float>> split;
