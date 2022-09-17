@@ -1,0 +1,2 @@
+1. Install sudo apt-get install libcurl4-openssl-dev
+2. Clone https://github.com/foxadb/yahoo-finance
