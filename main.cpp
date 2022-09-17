@@ -1,5 +1,5 @@
 #include <iostream>
-#include "AudioFile.h"
+#include "Audiofile/Audiofile.h"
 
 int main() {
     const std::string inputFilePath = "./test-audio.wav";
