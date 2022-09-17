@@ -4,10 +4,14 @@ using std::vector;
 
 vector<vector<float>> hann(int dayCount, vector<float> samples) {
     vector<vector<float>> split;
+    long interval = floor(samples.size()/dayCount);
     for (int i = 0; i < dayCount; i++){
-        long interval = (i != dayCount - 1) ? floor(samples.size()/dayCount) : samples.size() - i*interval;
+        long numRepeats = interval;
+        if (i == dayCount -1){
+            numRepeats = samples.size() - i*interval;
+        }
         vector<float> curVec;
-        for (int x = 0; x < interval; x++) {
+        for (int x = 0; x < numRepeats; x++) {
             double multiplier = 0.5 * (1 - cos(2*M_PI*x/interval));
             curVec.push_back(multiplier * samples[i*interval + x]);
         }
