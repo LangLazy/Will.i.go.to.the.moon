@@ -1,12 +1,21 @@
-#include <iostream>
 #include "Audiofile/Audiofile.h"
+#include "hann.h"
+#include <iostream>
+#include <string>
+using std::vector;
+using std::cout;
+using std::endl;
+using std::string;
 
 int main() {
-    const std::string inputFilePath = "./test-audio.wav";
+    const int DAYS = 260;
+    const string inputFilePath = "./test-audio.wav";
+
     AudioFile<float> a;
     bool loadedOK = a.load (inputFilePath);
-    for (int i = 0; i < a.getNumSamplesPerChannel(); i++){
-        std::cout << a.samples[0][i] << std::endl;
+    vector<vector<float>> split = hann(DAYS, a.samples[0]);
+    for (int i = 0; i < split.size(); ++i) {
+        cout << i << " " << split[i].size() << endl;
     }
     return 0;
 }
