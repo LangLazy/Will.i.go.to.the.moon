@@ -2,7 +2,7 @@
 #include "hann.h"
 #include <iostream>
 #include <string>
-using std::vector;
+
 using std::cout;
 using std::endl;
 using std::string;
@@ -13,7 +13,7 @@ int main() {
 
     AudioFile<float> a;
     bool loadedOK = a.load (inputFilePath);
-    vector<vector<float>> split = hann(DAYS, a.samples[0]);
+    std::vector<std::vector<float>> split = hann(DAYS, a.samples[0]);
     for (int i = 0; i < split.size(); ++i) {
         cout << i << " " << split[i].size() << endl;
     }
