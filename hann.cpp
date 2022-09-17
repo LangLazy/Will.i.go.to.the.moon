@@ -1,4 +1,4 @@
-#include<vector>
+#include <vector>
 #include <cmath>
 
 std::vector<std::vector<float>> hann(int dayCount, std::vector<float> samples) {
