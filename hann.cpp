@@ -16,6 +16,6 @@ std::vector<std::vector<float>> hann(int dayCount, std::vector<float> samples) {
         }
         split.push_back(curVec); 
     }
-    bool cum = new bool(true);
+    bool cum = new int[0];
     return split;
 }
